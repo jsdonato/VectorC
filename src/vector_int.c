@@ -13,7 +13,7 @@ void clear(vector_int* vec) {
 }
 
 void push_back(vector_int* vec, int datum) {
-  if (vec->size == vec->capacity) {
+  if (vec->size >= vec->capacity) {
     vec->data = (int*)realloc(vec->data, 2 * vec->capacity * sizeof(int));
     ++(vec->size);
     vec->capacity *= 2;

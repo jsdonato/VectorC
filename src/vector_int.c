@@ -37,3 +37,18 @@ int at(vector_int* vec, int i) {
 void set(vector_int* vec, int i, int datum) {
   (vec->data)[i] = datum;
 }
+
+void set_size(vector_int* vec, int size) {
+  if (size > vec->capacity) {
+    vec->data = (int*)realloc(vec->data, 2 * size * sizeof(int));
+    vec->size = size;
+    vec->capacity = 2 * size;
+  }
+}
+
+void set_capacity(vector_int* vec, int capacity) {
+  if (capacity > vec->capacity) {
+    vec->data = (int*)realloc(vec->data, capacity * sizeof(int));
+    vec->capacity = capacity;
+  }
+}

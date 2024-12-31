@@ -56,6 +56,50 @@ void test_vec_int() {
 
   clear(&vec);
 
+  // test set size
+  init(&vec);
+  set_size(&vec, 5);
+
+  set(&vec, 0, 43);
+  set(&vec, 1, 47);
+  set(&vec, 2, 53);
+  set(&vec, 3, 59);
+  set(&vec, 4, 61);
+
+  assert(at(&vec, 0) == 43);
+  assert(at(&vec, 1) == 47);
+  assert(at(&vec, 2) == 53);
+  assert(at(&vec, 3) == 59);
+  assert(at(&vec, 4) == 61);
+
+  clear(&vec);
+
+  // test set capacity
+  init(&vec);
+  set_capacity(&vec, 5);
+
+  assert(vec.size == 0);
+  assert(vec.capacity == 5);
+
+  // this is unintended behavior but wont throw
+  // errors due what we actually allocated
+  set(&vec, 0, 67);
+  set(&vec, 1, 71);
+
+  assert(at(&vec, 0) == 67);
+  assert(at(&vec, 1) == 71);
+
+  push_back(&vec, 73);
+  push_back(&vec, 79);
+
+  assert(vec.size == 2);
+  assert(vec.capacity == 5);
+
+  assert(at(&vec, 0) == 73);
+  assert(at(&vec, 1) == 79);
+
+  clear(&vec);
+
 
   printf("=== END VECTOR INT TESTS ===\n");
 }

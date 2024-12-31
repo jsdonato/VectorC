@@ -19,9 +19,9 @@ void push_back(vector_int* vec, int datum) {
     vec->capacity *= 2;
   }
   else {
-    (vec->data)[vec->size] = datum;
     ++(vec->size);
   }
+  (vec->data)[vec->size - 1] = datum;
 }
 
 int at(vector_int* vec, int i) {

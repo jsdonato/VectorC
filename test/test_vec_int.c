@@ -13,6 +13,7 @@ void test_vec_int() {
 
   // test push_back
   init(&vec);
+
   push_back(&vec, 2);
   push_back(&vec, 3);
   push_back(&vec, 5);
@@ -32,6 +33,29 @@ void test_vec_int() {
   assert(at(&vec, 7) == 19);
 
   assert(vec.size == 8);
+
+  clear(&vec);
+
+  // test init size
+  init_size(&vec, 5);
+
+  assert(vec.size == 5);
+  assert(vec.capacity == 10);
+
+  set(&vec, 0, 23);
+  set(&vec, 1, 29);
+  set(&vec, 2, 31);
+  set(&vec, 3, 37);
+  set(&vec, 4, 41);
+
+  assert(at(&vec, 0) == 23);
+  assert(at(&vec, 1) == 29);
+  assert(at(&vec, 2) == 31);
+  assert(at(&vec, 3) == 37);
+  assert(at(&vec, 4) == 41);
+
+  clear(&vec);
+
 
   printf("=== END VECTOR INT TESTS ===\n");
 }

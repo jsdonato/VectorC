@@ -6,6 +6,12 @@ void init(vector_int* vec) {
   vec->capacity = 1;
 }
 
+void init_size(vector_int* vec, int size) {
+  vec->data = (int*)malloc(size * sizeof(int));
+  vec->size = size;
+  vec->capacity = 2 * size;
+}
+
 void clear(vector_int* vec) {
   free(vec->data);
   vec->size = 0;

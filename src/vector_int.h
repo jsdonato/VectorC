@@ -1,3 +1,6 @@
+#ifndef VECTOR_INT_H
+#define VECTOR_INT_H
+
 #include "stdlib.h"
 
 typedef struct {
@@ -21,3 +24,5 @@ void set(vector_int* vec, int i, int datum);
 void set_size(vector_int* vec, int size);
 
 void set_capacity(vector_int* vec, int capacity);
+
+#endif

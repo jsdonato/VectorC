@@ -9,20 +9,20 @@ typedef struct {
   int capacity;
 } vector_double;
 
-void init(vector_double* vec);
+void vd_init(vector_double* vec);
 
-void init_size(vector_double* vec, int size);
+void vd_init_size(vector_double* vec, int size);
 
-void clear(vector_double* vec);
+void vd_clear(vector_double* vec);
 
-void push_back(vector_double* vec, double datum);
+void vd_push_back(vector_double* vec, double datum);
 
-double at(vector_double* vec, int i);
+double vd_at(vector_double* vec, int i);
 
-void set(vector_double* vec, int i, double datum);
+void vd_set(vector_double* vec, int i, double datum);
 
-void set_size(vector_double* vec, int size);
+void vd_set_size(vector_double* vec, int size);
 
-void set_capacity(vector_double* vec, int capacity);
+void vd_set_capacity(vector_double* vec, int capacity);
 
 #endif

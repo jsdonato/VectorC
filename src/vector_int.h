@@ -9,20 +9,20 @@ typedef struct {
   int capacity;
 } vector_int;
 
-void init(vector_int* vec);
+void vi_init(vector_int* vec);
 
-void init_size(vector_int* vec, int size);
+void vi_init_size(vector_int* vec, int size);
 
-void clear(vector_int* vec);
+void vi_clear(vector_int* vec);
 
-void push_back(vector_int* vec, int datum);
+void vi_push_back(vector_int* vec, int datum);
 
-int at(vector_int* vec, int i);
+int vi_at(vector_int* vec, int i);
 
-void set(vector_int* vec, int i, int datum);
+void vi_set(vector_int* vec, int i, int datum);
 
-void set_size(vector_int* vec, int size);
+void vi_set_size(vector_int* vec, int size);
 
-void set_capacity(vector_int* vec, int capacity);
+void vi_set_capacity(vector_int* vec, int capacity);
 
 #endif

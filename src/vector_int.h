@@ -1,7 +1,7 @@
 #ifndef VECTOR_INT_H
 #define VECTOR_INT_H
 
-#include "stdlib.h"
+#include <stdlib.h>
 
 typedef struct {
   int* data;

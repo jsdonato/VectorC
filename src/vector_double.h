@@ -1,7 +1,7 @@
 #ifndef VECTOR_DOUBLE_H
 #define VECTOR_DOUBLE_H
 
-#include "stdlib.h"
+#include <stdlib.h>
 
 typedef struct {
   double* data;

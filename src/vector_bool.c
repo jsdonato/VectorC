@@ -41,9 +41,9 @@ void vb_set(vector_bool* vec, int i, bool datum) {
 void vb_set_size(vector_bool* vec, int size) {
   if (size > vec->capacity) {
     vec->data = (bool*)realloc(vec->data, 2 * size * sizeof(bool));
-    vec->size = size;
     vec->capacity = 2 * size;
   }
+  vec->size = size;
 }
 
 void vb_set_capacity(vector_bool* vec, int capacity) {

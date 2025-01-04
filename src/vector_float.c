@@ -41,9 +41,9 @@ void vf_set(vector_float* vec, int i, float datum) {
 void vf_set_size(vector_float* vec, int size) {
   if (size > vec->capacity) {
     vec->data = (float*)realloc(vec->data, 2 * size * sizeof(float));
-    vec->size = size;
     vec->capacity = 2 * size;
   }
+  vec->size = size;
 }
 
 void vf_set_capacity(vector_float* vec, int capacity) {

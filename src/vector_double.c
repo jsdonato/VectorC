@@ -6,7 +6,7 @@ void vd_init(vector_double* vec) {
   vec->capacity = 1;
 }
 
-void vd_init_size(vector_double* vec, int size) {
+void vd_init_size(vector_double* vec, unsigned int size) {
   vec->data = (double*)malloc(size * sizeof(double));
   vec->size = size;
   vec->capacity = 2 * size;
@@ -30,15 +30,15 @@ void vd_push_back(vector_double* vec, double datum) {
   (vec->data)[vec->size - 1] = datum;
 }
 
-double vd_at(vector_double* vec, int i) {
+double vd_at(vector_double* vec, unsigned int i) {
   return (vec->data)[i];
 }
 
-void vd_set(vector_double* vec, int i, double datum) {
+void vd_set(vector_double* vec, unsigned int i, double datum) {
   (vec->data)[i] = datum;
 }
 
-void vd_set_size(vector_double* vec, int size) {
+void vd_set_size(vector_double* vec, unsigned int size) {
   if (size > vec->capacity) {
     vec->data = (double*)realloc(vec->data, 2 * size * sizeof(double));
     vec->capacity = 2 * size;
@@ -46,7 +46,7 @@ void vd_set_size(vector_double* vec, int size) {
   vec->size = size;
 }
 
-void vd_set_capacity(vector_double* vec, int capacity) {
+void vd_set_capacity(vector_double* vec, unsigned int capacity) {
   if (capacity > vec->capacity) {
     vec->data = (double*)realloc(vec->data, capacity * sizeof(double));
     vec->capacity = capacity;

@@ -6,7 +6,7 @@ void vb_init(vector_bool* vec) {
   vec->capacity = 1;
 }
 
-void vb_init_size(vector_bool* vec, int size) {
+void vb_init_size(vector_bool* vec, unsigned int size) {
   vec->data = (bool*)malloc(size * sizeof(bool));
   vec->size = size;
   vec->capacity = 2 * size;
@@ -30,15 +30,15 @@ void vb_push_back(vector_bool* vec, bool datum) {
   (vec->data)[vec->size - 1] = datum;
 }
 
-bool vb_at(vector_bool* vec, int i) {
+bool vb_at(vector_bool* vec, unsigned int i) {
   return (vec->data)[i];
 }
 
-void vb_set(vector_bool* vec, int i, bool datum) {
+void vb_set(vector_bool* vec, unsigned int i, bool datum) {
   (vec->data)[i] = datum;
 }
 
-void vb_set_size(vector_bool* vec, int size) {
+void vb_set_size(vector_bool* vec, unsigned int size) {
   if (size > vec->capacity) {
     vec->data = (bool*)realloc(vec->data, 2 * size * sizeof(bool));
     vec->capacity = 2 * size;
@@ -46,7 +46,7 @@ void vb_set_size(vector_bool* vec, int size) {
   vec->size = size;
 }
 
-void vb_set_capacity(vector_bool* vec, int capacity) {
+void vb_set_capacity(vector_bool* vec, unsigned int capacity) {
   if (capacity > vec->capacity) {
     vec->data = (bool*)realloc(vec->data, capacity * sizeof(bool));
     vec->capacity = capacity;

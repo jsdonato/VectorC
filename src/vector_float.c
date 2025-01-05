@@ -6,7 +6,7 @@ void vf_init(vector_float* vec) {
   vec->capacity = 1;
 }
 
-void vf_init_size(vector_float* vec, int size) {
+void vf_init_size(vector_float* vec, unsigned int size) {
   vec->data = (float*)malloc(size * sizeof(float));
   vec->size = size;
   vec->capacity = 2 * size;
@@ -30,15 +30,15 @@ void vf_push_back(vector_float* vec, float datum) {
   (vec->data)[vec->size - 1] = datum;
 }
 
-float vf_at(vector_float* vec, int i) {
+float vf_at(vector_float* vec, unsigned int i) {
   return (vec->data)[i];
 }
 
-void vf_set(vector_float* vec, int i, float datum) {
+void vf_set(vector_float* vec, unsigned int i, float datum) {
   (vec->data)[i] = datum;
 }
 
-void vf_set_size(vector_float* vec, int size) {
+void vf_set_size(vector_float* vec, unsigned int size) {
   if (size > vec->capacity) {
     vec->data = (float*)realloc(vec->data, 2 * size * sizeof(float));
     vec->capacity = 2 * size;
@@ -46,7 +46,7 @@ void vf_set_size(vector_float* vec, int size) {
   vec->size = size;
 }
 
-void vf_set_capacity(vector_float* vec, int capacity) {
+void vf_set_capacity(vector_float* vec, unsigned int capacity) {
   if (capacity > vec->capacity) {
     vec->data = (float*)realloc(vec->data, capacity * sizeof(float));
     vec->capacity = capacity;

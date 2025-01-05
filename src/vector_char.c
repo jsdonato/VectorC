@@ -6,7 +6,7 @@ void vc_init(vector_char* vec) {
   vec->capacity = 1;
 }
 
-void vc_init_size(vector_char* vec, int size) {
+void vc_init_size(vector_char* vec, unsigned int size) {
   vec->data = (char*)malloc(size * sizeof(char));
   vec->size = size;
   vec->capacity = 2 * size;
@@ -30,15 +30,15 @@ void vc_push_back(vector_char* vec, char datum) {
   (vec->data)[vec->size - 1] = datum;
 }
 
-char vc_at(vector_char* vec, int i) {
+char vc_at(vector_char* vec, unsigned int i) {
   return (vec->data)[i];
 }
 
-void vc_set(vector_char* vec, int i, char datum) {
+void vc_set(vector_char* vec, unsigned int i, char datum) {
   (vec->data)[i] = datum;
 }
 
-void vc_set_size(vector_char* vec, int size) {
+void vc_set_size(vector_char* vec, unsigned int size) {
   if (size > vec->capacity) {
     vec->data = (char*)realloc(vec->data, 2 * size * sizeof(char));
     vec->capacity = 2 * size;
@@ -46,7 +46,7 @@ void vc_set_size(vector_char* vec, int size) {
    vec->size = size;
 }
 
-void vc_set_capacity(vector_char* vec, int capacity) {
+void vc_set_capacity(vector_char* vec, unsigned int capacity) {
   if (capacity > vec->capacity) {
     vec->data = (char*)realloc(vec->data, capacity * sizeof(char));
     vec->capacity = capacity;

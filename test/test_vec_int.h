@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
+#include "test_helper.h"
 #include "vector_int.h"
 
-void test_vec_int();
+int test_vec_int();

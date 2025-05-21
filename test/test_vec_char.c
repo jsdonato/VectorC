@@ -1,14 +1,14 @@
 #include "test_vec_char.h"
 
-void test_vec_char() {
+int test_vec_char() {
   printf("=== BEGIN VECTOR CHAR TESTS ===\n");
 
   vector_char vec;
 
   // test init
   vc_init(&vec);
-  assert(vec.size == 0);
-  assert(vec.capacity == 1);
+  ASSERT_TRUE(vec.size == 0);
+  ASSERT_TRUE(vec.capacity == 1);
   vc_clear(&vec);
 
   // test push_back
@@ -23,24 +23,24 @@ void test_vec_char() {
   vc_push_back(&vec, 'g');
   vc_push_back(&vec, 'h');
 
-  assert(vc_at(&vec, 0) == 'a');
-  assert(vc_at(&vec, 1) == 'b');
-  assert(vc_at(&vec, 2) == 'c');
-  assert(vc_at(&vec, 3) == 'd');
-  assert(vc_at(&vec, 4) == 'e');
-  assert(vc_at(&vec, 5) == 'f');
-  assert(vc_at(&vec, 6) == 'g');
-  assert(vc_at(&vec, 7) == 'h');
+  ASSERT_TRUE(vc_at(&vec, 0) == 'a');
+  ASSERT_TRUE(vc_at(&vec, 1) == 'b');
+  ASSERT_TRUE(vc_at(&vec, 2) == 'c');
+  ASSERT_TRUE(vc_at(&vec, 3) == 'd');
+  ASSERT_TRUE(vc_at(&vec, 4) == 'e');
+  ASSERT_TRUE(vc_at(&vec, 5) == 'f');
+  ASSERT_TRUE(vc_at(&vec, 6) == 'g');
+  ASSERT_TRUE(vc_at(&vec, 7) == 'h');
 
-  assert(vec.size == 8);
+  ASSERT_TRUE(vec.size == 8);
 
   vc_clear(&vec);
 
   // test init size
   vc_init_size(&vec, 5);
 
-  assert(vec.size == 5);
-  assert(vec.capacity == 10);
+  ASSERT_TRUE(vec.size == 5);
+  ASSERT_TRUE(vec.capacity == 10);
 
   vc_set(&vec, 0, 'i');
   vc_set(&vec, 1, 'j');
@@ -48,11 +48,11 @@ void test_vec_char() {
   vc_set(&vec, 3, 'l');
   vc_set(&vec, 4, 'm');
 
-  assert(vc_at(&vec, 0) == 'i');
-  assert(vc_at(&vec, 1) == 'j');
-  assert(vc_at(&vec, 2) == 'k');
-  assert(vc_at(&vec, 3) == 'l');
-  assert(vc_at(&vec, 4) == 'm');
+  ASSERT_TRUE(vc_at(&vec, 0) == 'i');
+  ASSERT_TRUE(vc_at(&vec, 1) == 'j');
+  ASSERT_TRUE(vc_at(&vec, 2) == 'k');
+  ASSERT_TRUE(vc_at(&vec, 3) == 'l');
+  ASSERT_TRUE(vc_at(&vec, 4) == 'm');
 
   vc_clear(&vec);
 
@@ -66,11 +66,11 @@ void test_vec_char() {
   vc_set(&vec, 3, 'q');
   vc_set(&vec, 4, 'r');
 
-  assert(vc_at(&vec, 0) == 'n');
-  assert(vc_at(&vec, 1) == 'o');
-  assert(vc_at(&vec, 2) == 'p');
-  assert(vc_at(&vec, 3) == 'q');
-  assert(vc_at(&vec, 4) == 'r');
+  ASSERT_TRUE(vc_at(&vec, 0) == 'n');
+  ASSERT_TRUE(vc_at(&vec, 1) == 'o');
+  ASSERT_TRUE(vc_at(&vec, 2) == 'p');
+  ASSERT_TRUE(vc_at(&vec, 3) == 'q');
+  ASSERT_TRUE(vc_at(&vec, 4) == 'r');
 
   vc_clear(&vec);
 
@@ -78,27 +78,28 @@ void test_vec_char() {
   vc_init(&vec);
   vc_set_capacity(&vec, 5);
 
-  assert(vec.size == 0);
-  assert(vec.capacity == 5);
+  ASSERT_TRUE(vec.size == 0);
+  ASSERT_TRUE(vec.capacity == 5);
 
   // this is unintended behavior but wont throw
   // errors due what we actually allocated
   vc_set(&vec, 0, 's');
   vc_set(&vec, 1, 't');
 
-  assert(vc_at(&vec, 0) == 's');
-  assert(vc_at(&vec, 1) == 't');
+  ASSERT_TRUE(vc_at(&vec, 0) == 's');
+  ASSERT_TRUE(vc_at(&vec, 1) == 't');
 
   vc_push_back(&vec, 'u');
   vc_push_back(&vec, 'v');
 
-  assert(vec.size == 2);
-  assert(vec.capacity == 5);
+  ASSERT_TRUE(vec.size == 2);
+  ASSERT_TRUE(vec.capacity == 5);
 
-  assert(vc_at(&vec, 0) == 'u');
-  assert(vc_at(&vec, 1) == 'v');
+  ASSERT_TRUE(vc_at(&vec, 0) == 'u');
+  ASSERT_TRUE(vc_at(&vec, 1) == 'v');
 
   vc_clear(&vec);
 
   printf("=== END VECTOR CHAR TESTS ===\n");
+  return EXIT_SUCCESS;
 }

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
+#include "test_helper.h"
 #include "vector_double.h"
 
-void test_vec_double();
+int test_vec_double();

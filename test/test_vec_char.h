@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <assert.h>
 #include "test_helper.h"
 #include "vector_char.h"
 

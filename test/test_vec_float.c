@@ -1,4 +1,4 @@
-#include "test_vec_float.h"
+#include "tests.h"
 
 int test_vec_float() {
   printf("=== BEGIN VECTOR FLOAT TESTS ===\n");

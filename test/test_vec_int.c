@@ -1,4 +1,4 @@
-#include "test_vec_int.h"
+#include "tests.h"
 
 int test_vec_int() {
   printf("=== BEGIN VECTOR INT TESTS ===\n");

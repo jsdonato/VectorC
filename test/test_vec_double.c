@@ -1,4 +1,4 @@
-#include "test_vec_double.h"
+#include "tests.h"
 
 int test_vec_double() {
   printf("=== BEGIN VECTOR DOUBLE TESTS ===\n");
